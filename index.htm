@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon</title>
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+      color: #ffffff;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #bbbbbb;
+      margin-bottom: 2rem;
+    }
+
+    .links {
+    display: flex;  /* Use flexbox for layout */
+    flex-direction: row; /* Arrange links in a row */
+    justify-content: center; /* Center links horizontally */
+    align-items: center; /* Center links vertically */
+    flex-wrap: wrap; /* Allow wrapping of links */
+    width: 100%; /* Set width to 100% for proper centering */
+    max-width: 50%; /* Add a max-width for better layout control */
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 20px; /* Add some space above the links */
+    gap: 30px; /* Add spacing between the links */
+}
+
+#youtube:hover {
+    filter: invert(22%) sepia(93%) saturate(6077%) hue-rotate(357deg) brightness(88%) contrast(132%);
+}
+
+#twitch {
+    background-image: url('images/socials/Twitch.svg'); /* Replace with your icon URL */
+    background-size: contain; /* Ensure the icon fits within the element */
+    display: inline-block;
+    width: 30px; /* Set a fixed width for the icon */
+    height: 30px; /* Set a fixed height for the icon */
+    margin-right: 5px; /* Add some space between the icon and text */
+    vertical-align: middle; /* Align the icon vertically with the text */
+    fill: #ffffff; /* Set the icon color to white */
+    transition: fill 0.3s; /* Add transition for smooth effect */
+}
+#twitch:hover {
+    filter: invert(33%) sepia(26%) saturate(5572%) hue-rotate(247deg) brightness(98%) contrast(107%);
+  }
+#kick {
+    background-image: url('images/socials/Kick.svg'); /* Replace with your icon URL */
+    background-size: contain; /* Ensure the icon fits within the element */
+    display: inline-block;
+    width: 30px; /* Set a fixed width for the icon */
+    height: 30px; /* Set a fixed height for the icon */
+    margin-right: 5px; /* Add some space between the icon and text */
+    vertical-align: middle; /* Align the icon vertically with the text */
+}
+#kick:hover {
+    filter: invert(70%) sepia(87%) saturate(663%) hue-rotate(51deg) brightness(104%) contrast(98%);
+  }
+#discord {
+    background-image: url('images/socials/discord.svg'); /* Replace with your icon URL */
+    background-size: contain; /* Ensure the icon fits within the element */
+    display: inline-block;
+    width: 30px; /* Set a fixed width for the icon */
+    height: 30px; /* Set a fixed height for the icon */
+    margin-right: 5px; /* Add some space between the icon and text */
+    vertical-align: middle; /* Align the icon vertically with the text */
+}
+#discord:hover {
+    filter: invert(44%) sepia(47%) saturate(7036%) hue-rotate(225deg) brightness(100%) contrast(91%);
+}
+#ghub {
+    background-image: url('images/socials/GitHub.svg'); /* Replace with your icon URL */
+    background-size: contain; /* Ensure the icon fits within the element */
+    display: inline-block;
+    width: 30px; /* Set a fixed width for the icon */
+    height: 30px; /* Set a fixed height for the icon */
+    margin-right: 5px; /* Add some space between the icon and text */
+    vertical-align: middle; /* Align the icon vertically with the text */
+}
+#tiktok {
+    background-image: url('images/socials/TikTok.svg'); /* Replace with your icon URL */
+    background-size: contain; /* Ensure the icon fits within the element */
+    display: inline-block;
+    width: 30px; /* Set a fixed width for the icon */
+    height: 30px; /* Set a fixed height for the icon */
+    margin-right: 5px; /* Add some space between the icon and text */
+    vertical-align: middle; /* Align the icon vertically with the text */
+}
+#bsky {
+    background-image: url('images/socials/BlueSky.svg'); /* Replace with your icon URL */
+    background-size: contain; /* Ensure the icon fits within the element */
+    display: inline-block;
+    width: 30px; /* Set a fixed width for the icon */
+    height: 30px; /* Set a fixed height for the icon */
+    margin-right: 5px; /* Add some space between the icon and text */
+    vertical-align: middle; /* Align the icon vertically with the text */
+}
+#bsky:hover{
+    filter: invert(36%) sepia(75%) saturate(2282%) hue-rotate(196deg) brightness(100%) contrast(102%);
+}
+#insta {
+    background-image: url('images/socials/Instagram.svg'); /* Replace with your icon URL */
+    background-size: contain; /* Ensure the icon fits within the element */
+    display: inline-block;
+    width: 30px; /* Set a fixed width for the icon */
+    height: 30px; /* Set a fixed height for the icon */
+    margin-right: 5px; /* Add some space between the icon and text */
+    vertical-align: middle; /* Align the icon vertically with the text */
+}
+#insta:hover {
+    filter: invert(16%) sepia(100%) saturate(3269%) hue-rotate(310deg) brightness(115%) contrast(97%);
+}
+    .socials {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .socials a {
+      color: #bbbbbb;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #ffffff;
+    }
+
+    /* Optional subtle fade-in */
+    body {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <!-- Icons (Font Awesome CDN) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>Coming Soon</h1>
+  <p>I'm still deciding what to do with this.</p>
+
+ <div class="links">
+
+    <a href="https://bsky.app/profile/senpie.gg" id="bsky"></a>
+    <a href="https://instagram.com/senpieman" id="insta"></a>
+    <a href="https://discord.gg/X4akwF8236" id="discord"></a>
+    <a href="https://github.com/SENPIEMAN" id="ghub"></a>
+
+   </div>
+</body>
+</html>
