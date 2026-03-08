@@ -5,17 +5,17 @@
   --text: #13162a;
   --muted: #545878;
   --accent: #0062e6;
-  --font-sans: "Space Grotesk", sans-serif;
-  --font-mono: "Space Mono", monospace;
+  --font-sans: "Inconsolata", sans-serif;
+  --font-mono: "Inconsolata Mono", monospace;
   --radius: 10px;
   --space: 1rem;
   --transition: 0.2s ease;
 }
 
 [data-theme="dark"] {
-  --bg: #1a1d27;
-  --card: #252a3d;
-  --border: #6b7299;
+  --bg: #1f1a27;
+  --card: #31253d;
+  --border: #796b99;
   --text: #eceef8;
   --muted: #9ca2c4;
   --accent: #4a95f8;
@@ -38,7 +38,12 @@ main { max-width: 680px; margin: auto; padding: var(--space); display: flex; fle
 .about { font-size:0.9375rem; }
 
 .cards { display:grid; gap:0.75rem; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-.card { background: var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:0.75rem; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.card { 
+  background: var(--card); 
+  border:1px solid var(--border); 
+  border-radius:var(--radius); 
+  padding:0.75rem; 
+  transition: transform 0.15s ease, box-shadow 0.15s ease; }
 .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
 .card-title { font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; }
 .card-body { font-family: var(--font-mono); font-size:0.8125rem; color: var(--muted); }
