@@ -1,25 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simon Grieve | Coming Soon</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimal Hero Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Icons (Font Awesome CDN) -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body data-theme="dark">
 
-<body>
-  <h1>Coming Soon</h1>
-  <p>I'm still deciding what to do with this.</p>
+<main>
+  <header class="hero">
+    <img src="images/avatar.png" alt="Avatar" class="avatar">
+    <div class="hero-text">
+      <h1>Simon Grieve</h1>
+      <p>Design & Community Management</p>
+    </div>
+  </header>
 
- <div class="links">
+  <section class="about">
+    <h2 class="section-title">About Me</h2>
+    <p>Minimalist designer with a love for clean, functional, and visually appealing web experiences.</p>
+  </section>
 
-    <a href="https://bsky.app/profile/simongrieve.uk" id="bsky"></a>
-    <a href="https://instagram.com/grieve.snaps" id="insta"></a>
-    <a href="https://github.com/SENPIEMAN" id="ghub"></a>
+  <section class="cards">
+    <div class="card">
+      <div class="card-title">Project A</div>
+      <div class="card-body">A neat little project demonstrating my CSS skills.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Project B</div>
+      <div class="card-body">Compact and elegant web components.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Project C</div>
+      <div class="card-body">Clean, responsive design layouts.</div>
+    </div>
+        <div class="card">
+      <div class="card-title">Project C</div>
+      <div class="card-body">Clean, responsive design layouts.</div>
+    </div>
+        <div class="card">
+      <div class="card-title">Project C</div>
+      <div class="card-body">Clean, responsive design layouts.</div>
+    </div>
+  </section>
+</main>
 
-   </div>
+ <script src="script.js"></script>
+<!-- Toggle -->
+<label class="toggle" id="themeToggleWrapper">
+  <input type="checkbox" id="themeToggle">
+  <span class="toggle-track"></span>
+  <span class="toggle-thumb"></span>
+</label>
+
 </body>
 </html>

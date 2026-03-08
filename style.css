@@ -1,152 +1,68 @@
-    /* Reset default styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      height: 100vh;
-      background: linear-gradient(135deg, #252525, #080808);
-      color: #ffffff;
-      font-family: "Poppins", sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: #bbbbbb;
-      margin-bottom: 2rem;
-    }
-
-    .links {
-    display: flex;  /* Use flexbox for layout */
-    flex-direction: row; /* Arrange links in a row */
-    justify-content: center; /* Center links horizontally */
-    align-items: center; /* Center links vertically */
-    flex-wrap: wrap; /* Allow wrapping of links */
-    width: 100%; /* Set width to 100% for proper centering */
-    max-width: 50%; /* Add a max-width for better layout control */
-    margin: 0 auto; /* Center horizontally */
-    margin-top: 20px; /* Add some space above the links */
-    gap: 30px; /* Add spacing between the links */
+:root {
+  --bg: #f4f5fb;
+  --card: #ffffff;
+  --border: #7c83a6;
+  --text: #13162a;
+  --muted: #545878;
+  --accent: #0062e6;
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  --radius: 10px;
+  --space: 1rem;
+  --transition: 0.2s ease;
 }
 
-#youtube:hover {
-    filter: invert(22%) sepia(93%) saturate(6077%) hue-rotate(357deg) brightness(88%) contrast(132%);
+[data-theme="dark"] {
+  --bg: #1a1d27;
+  --card: #252a3d;
+  --border: #6b7299;
+  --text: #eceef8;
+  --muted: #9ca2c4;
+  --accent: #4a95f8;
 }
 
-#twitch {
-    background-image: url('images/socials/Twitch.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-    fill: #ffffff; /* Set the icon color to white */
-    transition: fill 0.3s; /* Add transition for smooth effect */
-}
-#twitch:hover {
-    filter: invert(33%) sepia(26%) saturate(5572%) hue-rotate(247deg) brightness(98%) contrast(107%);
-  }
-#kick {
-    background-image: url('images/socials/Kick.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-}
-#kick:hover {
-    filter: invert(70%) sepia(87%) saturate(663%) hue-rotate(51deg) brightness(104%) contrast(98%);
-  }
-#discord {
-    background-image: url('images/socials/discord.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-}
-#discord:hover {
-    filter: invert(44%) sepia(47%) saturate(7036%) hue-rotate(225deg) brightness(100%) contrast(91%);
-}
-#ghub {
-    background-image: url('images/socials/GitHub.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-}
-#ghub:hover {
-filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(288deg) brightness(102%) contrast(102%);
-}
-#tiktok {
-    background-image: url('images/socials/TikTok.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-}
-#bsky {
-    background-image: url('images/socials/BlueSky.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-}
-#bsky:hover{
-    filter: invert(36%) sepia(75%) saturate(2282%) hue-rotate(196deg) brightness(100%) contrast(102%);
-}
-#insta {
-    background-image: url('images/socials/Instagram.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-}
-#insta:hover {
-    filter: invert(16%) sepia(100%) saturate(3269%) hue-rotate(310deg) brightness(115%) contrast(97%);
-}
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: var(--font-sans); background: var(--bg); color: var(--text); line-height:1.6; transition: background var(--transition), color var(--transition); }
+a { color: var(--accent); text-decoration: none; }
 
-    /* Optional subtle fade-in */
-    body {
-      opacity: 0;
-      animation: fadeIn 8s ease forwards;
-    }
+main { max-width: 680px; margin: auto; padding: var(--space); display: flex; flex-direction: column; gap: 2rem; }
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
+.hero { display:flex; align-items:center; gap: var(--space); }
+.avatar { width:90px; height:90px; border-radius:50%; object-fit:cover; border:2px solid var(--border); flex-shrink:0; }
+.hero-text { display:flex; flex-direction:column; }
+.hero-text h1 { font-size:1.5rem; font-weight:500; }
+.hero-text p { font-family: var(--font-mono); font-size:0.875rem; color: var(--muted); }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-    }
+.section-title { font-size:1.125rem; font-weight:500; margin-bottom:0.5rem; }
+
+.about { font-size:0.9375rem; }
+
+.cards { display:grid; gap:0.75rem; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.card { background: var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:0.75rem; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+.card-title { font-weight:600; font-size:0.9rem; margin-bottom:0.25rem; }
+.card-body { font-family: var(--font-mono); font-size:0.8125rem; color: var(--muted); }
+
+/* Toggle switch - bottom right */
+#themeToggleWrapper {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 20px;
+  z-index: 1000;
+}
+.toggle-track {
+  position: absolute; 
+  inset:0; 
+  background: var(--border); 
+  border-radius:999px; 
+  pointer-events:none; 
+  transition: 0.2s;
+}
+.toggle-thumb {
+  position:absolute; top:2px; left:2px; width:16px; height:16px; background:white; border-radius:50%; pointer-events:none; transition: transform 0.2s;
+}
+#themeToggle:checked + .toggle-track { background: var(--accent); }
+#themeToggle:checked ~ .toggle-thumb { transform: translateX(16px); }
+.toggle input { position:absolute; width:100%; height:100%; opacity:0; cursor:pointer; }
