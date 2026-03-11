@@ -79,14 +79,66 @@
             font-size: 1.1rem;
             margin-top: 10px;
         }
+        /* --- Download Button Styles --- */
+.download-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px;
+    background: var(--bg);
+}
 
-        @media print {
-            body { background: var(--bg); }
-            .page { margin: 0; border: none; }
-        }
+.download-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.download-btn:hover {
+    background: #5a4a82; /* Slightly lighter than accent */
+    transform: translateY(-2px);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+}
+
+ /* --- Mobile Specific Button Behavior --- */
+@media (max-width: 768px) {
+    .download-container {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        border-bottom: 1px solid var(--border);
+        padding: 15px;
+    }
+    
+    .download-btn {
+        width: 100%; /* Makes it easier to tap on phones */
+    }
+}
+
+/* --- The Critical Print Rule --- */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
     </style>
 </head>
 <body>
+    <div class="no-print interface-controls">
+    <button onclick="window.print()" class="download-btn">
+        <span>📄</span> PDF
+    </button>
+    </div>
     <div class="page">
         <header>
             <h1>Simon Grieve</h1>
