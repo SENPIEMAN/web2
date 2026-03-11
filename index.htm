@@ -1,56 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Minimal Hero Page</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body data-theme="dark">
+<html lang="en-GB" data-theme="dark">
 
-<main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ==================================================
+       Primary Meta
+       ================================================== -->
+
+  <title>Simon Grieve — Support & Community</title>
+
+  <meta name="description" content="Simon Grieve — Customer Support and Community Management.">
+  <meta name="author" content="Simon Grieve">
+  <link rel="canonical" href="https://simongrieve.uk/">
+
+  <!-- ==================================================
+       Open Graph (Social sharing)
+       ================================================== -->
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Simon Grieve">
+  <meta property="og:description" content="Customer Support and Community Management.">
+  <meta property="og:url" content="https://simongrieve.uk">
+  <meta property="og:image" content="images/og-image.png">
+
+  <!-- ==================================================
+       Twitter Card
+       ================================================== -->
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Simon Grieve">
+  <meta name="twitter:description" content="Customer Support and Community Management.">
+  <meta name="twitter:image" content="images/og-image.png">
+
+  <!-- ==================================================
+       Theme colours
+       ================================================== -->
+
+  <meta name="theme-color" content="#1f1a27" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f5fb" media="(prefers-color-scheme: light)">
+
+  <!-- ==================================================
+       Fonts
+       ================================================== -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+
+  <!-- ==================================================
+       Styles
+       ================================================== -->
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+  <div class="interface-controls">
+<label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider">
+            <span class="icon sun">☀️</span>
+            <span class="icon moon">🌙</span>
+        </div>
+    </label>
+    </div>
+<main id="main" class="container">
+
   <header class="hero">
-    <img src="images/avatar.png" alt="Avatar" class="avatar">
+    <div class="avatar" role="img" aria-label="Simon Grieve"></div>
     <div class="hero-text">
       <h1>Simon Grieve</h1>
-      <p>Design & Community Management</p>
+      <p>Bridging the gap between <span style="color: var(--accent);">users</span> and <span style="color: var(--accent);">products</span>.</p>
     </div>
   </header>
 
   <section class="about">
-    <h2 class="section-title">About Me</h2>
-    <p>Minimalist designer with a love for clean, functional, and visually appealing web experiences.</p>
+    <h2 class="section-title">The Short Version</h2>
+    <p>
+      I have a deep-rooted history in retail and hospitality leadership. 
+      I believe the best digital products are built by listening to the people who use them. Whether it’s managing a community of thousands or retail operations, my focus is always on <strong>clarity, reliability, and human-centric service.</strong>
+    </p>
   </section>
 
-  <section class="cards">
-    <div class="card">
-      <div class="card-title">Project A</div>
-      <div class="card-body">A neat little project demonstrating my CSS skills.</div>
-    </div>
-    <div class="card">
-      <div class="card-title">Project B</div>
-      <div class="card-body">Compact and elegant web components.</div>
-    </div>
-    <div class="card">
-      <div class="card-title">Project C</div>
-      <div class="card-body">Clean, responsive design layouts.</div>
+
+
+
+      <section class="about">
+<h2 class="section-title">By Day...</h2>
+<p>I work in a high-street retail store in a middle-management role.</p>
+      </section>
+
+        <a href="/CV" style="text-decoration: none;">
+          <div class="card">
+            <div class="card-header">
+
+              <span class="card-title">Professional History</span>
+            </div>
+            <p class="card-body">View and download my updated CV. I would love to speak to you about future prospects.</p>
+          </div>
+        </a>
+
+      <section class="about">
+<h2 class="section-title">...And by night</h2>
+<p>In my spare time I am the Community Manager for <strong>Casterlabs</strong>.</p>
+      </section>
+      <div class="card">
+        <div class="card-header">
+
+          <span class="card-title">Side Hustle</span>
+        </div>
+        <p class="card-body"> I maintain the <a href="https://docs.casterlabs.co/" target="_blank">documentation site</a> for the products, and manage the community Discord server.
+        
+        </p>
+      </div>
     </div>
     </div>
   </section>
 </main>
 
- <script src="script.js"></script>
-<!-- Toggle -->
-<label class="toggle" id="themeToggleWrapper">
-  <input type="checkbox" id="themeToggle">
-  <span class="toggle-track"></span>
-  <span class="toggle-thumb"></span>
-</label>
-<footer>
 
-</footer>
+  <!-- ==================================================
+       FOOTER
+       ================================================== -->
+
+  <footer class="footer">
+
+
+
+<div class="footer-left">
+
+    <!-- Social Links -->
+
+<div class="socials">
+
+      <a href="#" class="social" target="_blank" rel="noopener">
+        <img src="images/socials/BlueSky.svg" alt="Bluesky">
+      </a>
+
+      <a href="#" class="social" target="_blank" rel="noopener">
+        <img src="images/socials/GitHub.svg" alt="GitHub">
+      </a>
+
+      <a href="#" class="social" target="_blank" rel="noopener">
+        <img src="images/socials/Instagram.svg" alt="Instagram">
+      </a>
+            <a href="#" class="social" target="_blank" rel="noopener">
+        <img src="images/socials/LinkedIn.svg" alt="LinkedIn">
+      </a>
+      </div>
+    <!-- Footer text -->
+
+    <div class="footer-text">
+
+      <p>I listen to Deftones.</p>
+
+      <p>
+        &copy;
+        <script>document.write(new Date().getFullYear())</script>
+        Simon Grieve.
+      </p>
+    </div>
+</div>
+
+
+
+
+
+  </footer>
+
+
+  <!-- ==================================================
+       Scripts
+       ================================================== -->
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>

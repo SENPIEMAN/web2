@@ -5,7 +5,7 @@ Repository snapshot
 - Repo: `web2` (owner: SENPIEMAN), branch: `main`
 - Current discoverable files: `LICENSE` at repository root. No source tree, build files, or README were found.
 
-What I (the agent) should assume
+What I (the agent) should assume.
 - Do not assume a language, framework, or build system. This repository currently contains no source files or build metadata. If you need to act (add tests, build, run), ask the human for the intended language and repo layout first.
 
 Primary objectives when opening an issue/PR
