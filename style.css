@@ -1,152 +1,570 @@
-    /* Reset default styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* =========================================================
+   DESIGN SYSTEM / THEME VARIABLES
+   ---------------------------------------------------------
+   Global tokens controlling colours, spacing, typography
+   and animation across the entire site.
+   ========================================================= */
 
-    body {
-      height: 100vh;
-      background: linear-gradient(135deg, #252525, #080808);
-      color: #ffffff;
-      font-family: "Poppins", sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+:root {
 
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-      margin-bottom: 0.5rem;
-    }
+  /* ---------- Colours ---------- */
 
-    p {
-      font-size: 1.1rem;
-      color: #bbbbbb;
-      margin-bottom: 2rem;
-    }
+  --bg: #f4f5fb;
+  --card: #e7e7e7;
+  --border: #7c83a6;
 
-    .links {
-    display: flex;  /* Use flexbox for layout */
-    flex-direction: row; /* Arrange links in a row */
-    justify-content: center; /* Center links horizontally */
-    align-items: center; /* Center links vertically */
-    flex-wrap: wrap; /* Allow wrapping of links */
-    width: 100%; /* Set width to 100% for proper centering */
-    max-width: 50%; /* Add a max-width for better layout control */
-    margin: 0 auto; /* Center horizontally */
-    margin-top: 20px; /* Add some space above the links */
-    gap: 30px; /* Add spacing between the links */
+  --text: #13162a;
+  --muted: #545878;
+  --accent: #665293;
+
+  --button: #313548;
+  --track: #0000004b;
+
+  /* ---------- Assets ---------- */
+
+  --avatar: url(images/avatar_light.png);
+
+  /* ---------- Typography ---------- */
+
+  --font-sans: "Inconsolata", sans-serif;
+  --font-mono: "Inconsolata Mono", monospace;
+
+  /* ---------- Layout ---------- */
+
+  --radius: 10px;
+  --border-width: 2px;
+
+  --space: 1rem;
+  --space-sm: 0.5rem;
+
+  /* ---------- Effects ---------- */
+
+  --transition: 0.2s ease;
+  --hover-lift: translateY(-2px);
+  --shadow-hover: 0 6px 20px rgba(0,0,0,0.5);
+
 }
 
-#youtube:hover {
-    filter: invert(22%) sepia(93%) saturate(6077%) hue-rotate(357deg) brightness(88%) contrast(132%);
+
+/* =========================================================
+   DARK MODE
+   ---------------------------------------------------------
+   Overrides colour tokens when dark theme is active.
+   ========================================================= */
+
+[data-theme="dark"] {
+
+  --bg: #1f1a27;
+  --card: #4a4154c2;
+
+  --button: #383041;
+  --track: #5a4571;
+
+  --border: #665293;
+
+  --text: #9ca2c4;
+  --muted: #707697;
+
+  --accent: #8677aa;
+
+  --avatar: url(images/avatar.png);
+
 }
 
-#twitch {
-    background-image: url('images/socials/Twitch.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================================
+   BASE DOCUMENT STYLES
+   ========================================================= */
+
+body {
+
+  font-family: var(--font-sans);
+
+  background: var(--bg);
+  color: var(--text);
+
+  line-height: 1.6;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the browser */
+  margin: 0;
+}
+
+a {
+  color: var(--muted);
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   LAYOUT UTILITIES
+   ---------------------------------------------------------
+   Small reusable layout helpers.
+   ========================================================= */
+
+.container {
+  width: min(680px, 100%);
+  margin-inline: auto;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+main { 
+flex: 1 0 auto; /* This makes the main content "grow" to fill the space */
+  width: min(680px, 100%);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: var(--space);
+}
+
+
+
+/* =========================================================
+   HERO SECTION
+   ---------------------------------------------------------
+   Avatar and introduction text.
+   ========================================================= */
+
+.hero { 
+  display:flex; 
+  align-items:center; 
+  gap: var(--space); 
+}
+
+.avatar {
+
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+  border: var(--border-width) solid var(--border);
+
+  background-image: var(--avatar);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  flex-shrink: 0;
+
+}
+
+.hero-text {
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.hero-text h1 {
+
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text);
+  text-transform: uppercase;
+
+}
+
+.hero-text p {
+
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+
+  color: var(--muted);
+
+}
+
+
+/* =========================================================
+   CONTENT SECTIONS
+   ========================================================= */
+
+.section-title {
+
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+
+  margin-bottom: 0.5rem;
+
+}
+
+.about {
+
+  font-size: 0.9375rem;
+
+}
+.day {
+
+  font-size: 0.9375rem;
+
+}
+
+/* =========================================================
+   CARD GRID
+   ---------------------------------------------------------
+   Responsive card layout for links/projects.
+   ========================================================= */
+
+.grid {
+  display: grid;
+  width: 80%;
+  gap: 0.2rem;
+}
+
+.grid-2 {
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cards {
+
+  display: grid;
+
+  gap: 0.75rem;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(180px, 1fr));
+
+}
+
+
+/* =========================================================
+   CARD COMPONENT
+   ========================================================= */
+
+.card {
+
+  background: var(--card);
+
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(5px);
+
+  padding: var(--space-sm);
+
+  display: flex;
+  flex-direction: column;
+
+  transition: var(--transition);
+
+}
+
+.card:hover {
+
+  transform: var(--hover-lift);
+  box-shadow: var(--shadow-hover);
+
+}
+
+.card-title {
+
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+
+}
+
+.card-body {
+
+  font-family: var(--font-mono);
+
+  font-size: 0.8125rem;
+
+  color: var(--text);
+
+}
+.card {
+  animation: fadeUp 0.5s ease forwards;
+
+}
+
+/* Stagger the animation for each card */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+
+/* =========================================================
+   THEME TOGGLE
+   ---------------------------------------------------------
+   Floating light/dark switch.
+   ========================================================= */
+
+/* --- Interface Layout --- */
+.interface-controls {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    gap: 20px;
+    padding: 20px;
+    background: var(--bg);
+}
+
+
+/* --- Interface Layout --- */
+.interface-controls {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 20px;
+    padding: 0px;
+    background: var(--bg);
+}
+
+
+/* --- Toggle Switch Styling --- */
+.theme-switch {
     display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-    fill: #ffffff; /* Set the icon color to white */
-    transition: fill 0.3s; /* Add transition for smooth effect */
+    height: 34px;
+    position: relative;
+    width: 60px;
 }
-#twitch:hover {
-    filter: invert(33%) sepia(26%) saturate(5572%) hue-rotate(247deg) brightness(98%) contrast(107%);
+
+.theme-switch input { display: none; }
+
+.slider {
+    background-color: var(--button);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.slider:before {
+    background-color: white;
+    bottom: 4px;
+    content: "";
+    height: 24px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 24px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+input:checked + .slider { background-color: var(--accent); }
+input:checked + .slider:before { transform: translateX(26px); }
+
+.slider .icon { font-size: 14px; }
+
+/* Sticky controls for mobile */
+@media (max-width: 768px) {
+    .interface-controls {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid var(--border);
+    }
+}
+/* Sticky controls for mobile */
+@media (max-width: 768px) {
+    .interface-controls {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid var(--border);
+    }
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  border-top: 0px;
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0; /* Prevents the footer from squishing */
+  margin-top: auto; /* A fallback push */
+  align-items: flex-start;
+  gap: var(--space-md);
+  transition: border-color var(--transition-slow);
+}
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.footer-left p {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 0.65rem;
+    row-gap: 0;
+    column-gap: 0;
+}
+
+
+
+
+/* =========================================================
+   SOCIAL LINKS
+   ========================================================= */
+
+.socials {
+  bottom: 0.12rem;
+  left: 3rem;
+
+  display: flex;
+
+  gap: 0.8rem;
+
+}
+
+.social img {
+
+  width: 16px;
+  height: auto;
+
+  opacity: 0.7;
+
+  transition: var(--transition);
+
+}
+
+.social:hover img {
+
+  opacity: 1;
+
+  transform: translateY(-2px);
+}
+/* =========================================================
+   RESPONSIVE DESIGN (MOBILE OPTIMIZATIONS)
+   ========================================================= */
+
+@media (max-width: 600px) {
+  :root {
+    --space: 1.25rem; /* Slightly more breathing room for touch */
+    --radius: 12px;   /* Softer corners look better on mobile */
   }
-#kick {
-    background-image: url('images/socials/Kick.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-}
-#kick:hover {
-    filter: invert(70%) sepia(87%) saturate(663%) hue-rotate(51deg) brightness(104%) contrast(98%);
+
+  /* 1. Hero Stack: Stack avatar above text on very small screens */
+  .hero {
+    flex-direction: row;
+    text-align: left;
+    gap: 1.5rem;
   }
-#discord {
-    background-image: url('images/socials/discord.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-}
-#discord:hover {
-    filter: invert(44%) sepia(47%) saturate(7036%) hue-rotate(225deg) brightness(100%) contrast(91%);
-}
-#ghub {
-    background-image: url('images/socials/GitHub.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-}
-#ghub:hover {
-filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(288deg) brightness(102%) contrast(102%);
-}
-#tiktok {
-    background-image: url('images/socials/TikTok.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-}
-#bsky {
-    background-image: url('images/socials/BlueSky.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-}
-#bsky:hover{
-    filter: invert(36%) sepia(75%) saturate(2282%) hue-rotate(196deg) brightness(100%) contrast(102%);
-}
-#insta {
-    background-image: url('images/socials/Instagram.svg'); /* Replace with your icon URL */
-    background-size: contain; /* Ensure the icon fits within the element */
-    display: inline-block;
-    width: 30px; /* Set a fixed width for the icon */
-    height: 30px; /* Set a fixed height for the icon */
-    margin-right: 5px; /* Add some space between the icon and text */
-    vertical-align: middle; /* Align the icon vertically with the text */
-}
-#insta:hover {
-    filter: invert(16%) sepia(100%) saturate(3269%) hue-rotate(310deg) brightness(115%) contrast(97%);
+
+  /* 2. Grid & Cards: Ensure cards take up appropriate space */
+  .grid, .grid-2 {
+    width: 100%; /* Force full width */
+    grid-template-columns: 1fr; /* Stack columns vertically */
+  }
+
+  .cards {
+    /* Prevent the cards from getting too skinny */
+    grid-template-columns: 1fr; 
+    gap: 1rem;
+  }
+
+  /* 3. Typography: Scale down headers so they don't wrap awkwardly */
+  .hero-text h1 {
+    font-size: 1.25rem;
+  }
+
+  /* 4. Footer: Stack footer elements for narrow screens */
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+
+  /* 5. Theme Toggle: Make it slightly larger for thumbs */
+  #themeToggleWrapper {
+    width: 44px; 
+    height: 24px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  #themeToggle:checked ~ .toggle-thumb {
+    transform: translateX(20px);
+  }
+
+  .toggle-thumb {
+    width: 20px;
+    height: 20px;
+  }
 }
 
-    /* Optional subtle fade-in */
-    body {
-      opacity: 0;
-      animation: fadeIn 8s ease forwards;
-    }
+/* =========================================================
+   ACCESSIBILITY & OVERFLOW FIXES
+   ========================================================= */
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
+/* Prevents horizontal scrolling if a long word or URL exists */
+* {
+  overflow-wrap: break-word;
+}
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-    }
+/* Ensure images don't break the layout */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Improve tap targets for links in the footer/socials */
+.social a, .footer a {
+  padding: 3px; 
+  display: inline-block;
+}
